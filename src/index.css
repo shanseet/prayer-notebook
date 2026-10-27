@@ -29,6 +29,10 @@ a:focus-visible,
   outline: 2px solid #40a9ff;
   outline-offset: 2px;
 }
+/* tabindex="-1" containers (e.g. a dialog panel) are focused by script, never a keyboard stop. */
+[tabindex="-1"]:focus-visible {
+  outline: none;
+}
 
 .app {
   padding: 32px 16px 64px;

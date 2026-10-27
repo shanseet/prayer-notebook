@@ -4,8 +4,9 @@ import { Button, Input, Popconfirm } from "antd";
 import { useApp } from "../context/AppProvider";
 
 export default function AnsweredPopover({ id }: { id: string }) {
-  const { markAnswered } = useApp();
+  const { markAnswered, settings } = useApp();
   const [note, setNote] = useState("");
+  if (!settings.answeredEnabled) return null;
   return (
     <Popconfirm
       icon={null}

@@ -42,7 +42,7 @@ export default function PrayerCardEditor({
         <Input.TextArea
           aria-label="Prayer request"
           placeholder="Enter prayer request (optional)"
-          autoSize={{ minRows: 3 }}
+          autoSize={{ minRows: 2 }}
           value={item.note}
           onChange={(e) => update(listKey, item.id, { note: e.target.value })}
         />

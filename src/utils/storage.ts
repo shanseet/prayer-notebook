@@ -8,6 +8,7 @@ const ABOUT_KEY = "prayer-notebook:about-seen";
 export const defaultSettings = (): Settings => ({
   fontFamily: "Roboto",
   fontSize: "M",
+  answeredEnabled: true,
 });
 
 export const emptyData = (): PrayerData => ({
@@ -73,6 +74,10 @@ function normalizeSettings(raw: Partial<Settings> | null): Settings {
       : d.fontFamily,
     fontSize:
       raw?.fontSize && raw.fontSize in FONT_SIZES ? raw.fontSize : d.fontSize,
+    answeredEnabled:
+      typeof raw?.answeredEnabled === "boolean"
+        ? raw.answeredEnabled
+        : d.answeredEnabled,
   };
 }
 

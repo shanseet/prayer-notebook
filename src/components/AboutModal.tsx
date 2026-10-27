@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Modal } from "antd";
 
 export default function AboutModal({
@@ -7,13 +8,28 @@ export default function AboutModal({
   open: boolean;
   onClose: () => void;
 }) {
+  useEffect(() => {
+    if (!open) return;
+    const t = setTimeout(
+      () =>
+        document
+          .querySelector<HTMLElement>(".about-modal .ant-modal")
+          ?.focus({ preventScroll: true }),
+      50,
+    );
+    return () => clearTimeout(t);
+  }, [open]);
+
   return (
     <Modal
       open={open}
       closable={true}
       title={"Prayer Notebook"}
       style={{ top: "10vh" }}
-      rootClassName="scroll-modal"
+      rootClassName="scroll-modal about-modal"
+      // The focus trap focuses the first control (the X) on open and shows a focus ring on first load.
+      // Focus the dialog itself instead, so Esc still works and no button looks selected.
+      focusable={{ trap: false }}
       okButtonProps={{ hidden: true }}
       cancelButtonProps={{ hidden: true }}
       onOk={onClose}

@@ -33,7 +33,7 @@ Keep your prayer requests in three lists, then open **Today** each day to see ev
 
 ## On your phone
 
-The layout is designed for phones as well as desktops, and the app can be installed on your home screen so it opens like a normal app and keeps working offline. 
+The layout is designed for phones as well as desktops, and the app can be installed on your home screen so it opens like a normal app and keeps working offline.
 
 In Chrome on Android, open the site and choose **Install app** (or **Add to Home screen**) from the browser menu.
 
@@ -43,6 +43,7 @@ Tap the gear icon on the Today tab to:
 
 - Choose a font: Roboto, Nunito, Lora, Kalam, Shadows Into Light or Nanum Pen Script.
 - Choose a text size: S, M, L or XL.
+- Turn **Enable Answered Prayers** on or off (on by default). Turning it off hides the Answered tab and the tick that marks a prayer as answered. Your existing answered prayers are kept and come back when you turn it on again.
 - **Export** your prayers and settings (copied to your clipboard), and **Import** them again in another browser or on another device. Importing replaces everything currently saved.
 - **Clear All Data** to wipe everything from your browser.
 

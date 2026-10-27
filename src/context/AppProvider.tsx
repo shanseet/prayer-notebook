@@ -108,8 +108,12 @@ function Inner({
 
   // The Answered tab disappears with its last item; fall back to Today.
   useEffect(() => {
-    if (tab === "answered" && data.answered.length === 0) setTab("today");
-  }, [tab, data.answered.length]);
+    if (
+      tab === "answered" &&
+      (!settings.answeredEnabled || data.answered.length === 0)
+    )
+      setTab("today");
+  }, [tab, data.answered.length, settings.answeredEnabled]);
 
   const clearAll = useCallback(() => {
     clearStorage();

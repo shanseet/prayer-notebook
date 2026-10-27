@@ -1,4 +1,4 @@
-import { Button, Modal, Popconfirm, Radio, Select } from "antd";
+import { Button, Modal, Popconfirm, Radio, Select, Switch } from "antd";
 import BackupSection from "./BackupSection";
 import { useApp } from "../context/AppProvider";
 import { FONT_FAMILIES, FONT_SIZES } from "../types";
@@ -54,6 +54,27 @@ export default function SettingsModal({
               value: s,
               label: s,
             }))}
+          />
+        </div>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            gap: 12,
+          }}
+        >
+          <span
+            className="field-label"
+            id="answered-label"
+            style={{ margin: 0 }}
+          >
+            Enable Answered Prayers
+          </span>
+          <Switch
+            aria-labelledby="answered-label"
+            checked={settings.answeredEnabled}
+            onChange={(answeredEnabled) => updateSettings({ answeredEnabled })}
           />
         </div>
         <BackupSection />

@@ -39,6 +39,7 @@ export type FontSize = keyof typeof FONT_SIZES;
 export interface Settings {
   fontFamily: FontFamily;
   fontSize: FontSize;
+  answeredEnabled: boolean;
 }
 
 /** Identifies one editable list: 'daily', 'weekly:mon', 'monthly:5'. */

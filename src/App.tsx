@@ -23,10 +23,12 @@ const LABELS: [TabKey, string][] = [
 ];
 
 export default function App() {
-  const { tab, setTab, editing, data } = useApp();
+  const { tab, setTab, editing, data, settings } = useApp();
   const Page = PAGES[tab];
   const items = LABELS.filter(
-    ([k]) => k !== "answered" || data.answered.length > 0,
+    ([k]) =>
+      k !== "answered" ||
+      (settings.answeredEnabled && data.answered.length > 0),
   )
     // While editing, every tab except the current one is disabled.
     .map(([key, label]) => ({ key, label, disabled: editing && key !== tab }));
